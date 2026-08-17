@@ -31,7 +31,7 @@ def is_night():
     response = requests.get("https://api.sunrise-sunset.org/json", params=parameters)
     response.raise_for_status()
     data = response.json()
-    sunrise_hour = int(data["results"]["sunrise"].split("T")[1].split(":")[0])
+    sunrise_hour = int(data["results"]["sunrise"].split("T")[1].split(":")[0])  #Converts to integer
     sunset_hour = int(data["results"]["sunset"].split("T")[1].split(":")[0])
 
     time_now = datetime.now()
